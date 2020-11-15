@@ -13,6 +13,7 @@ class Room3:
         return len(self.list_of_songs)
 
     def check_in(self, guest):
+        
         self.group_of_guests.append(guest)
     
     def check_out(self, guest):

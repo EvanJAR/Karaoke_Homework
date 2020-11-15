@@ -1,16 +1,22 @@
 import unittest 
 from src_code.guest import Guest
 from src_code.room import Room
+from src_code.room_2 import Room2
+from src_code.room_3 import Room3
 from src_code.song import Song
 
 class TestRoom(unittest.TestCase):
 
     def setUp(self):
-        self.room = Room("Party Room", 10)
+        self.room = Room("Party Room", 7)
+        self.room_2 = Room2("Small Room", 5)
+        self.room_3 = Room3("Celebration Room", 15) 
 
     def test_room_has_name(self):
         self.assertEqual("Party Room", self.room.name)
-    
+        self.assertEqual("Small Room", self.room_2.name)
+        self.assertEqual("Celebration Room", self.room_3.name)
+
     def test_room_has_guests__empty_room(self):
         self.assertEqual(0, self.room.guest_count())
 
@@ -18,7 +24,7 @@ class TestRoom(unittest.TestCase):
         self.assertEqual(0, self.room.song_count())
 
     def test_room_has_capacity(self):
-        self.assertEqual(10, self.room.capacity)
+        self.assertEqual(7, self.room.capacity)
 
     def test_room_check_in(self):
         guest = Guest("Nat King Cole")
@@ -35,5 +41,7 @@ class TestRoom(unittest.TestCase):
         new_song = Song("Hit Me Baby One More Time", "Britney Spears")
         self.room.add_song(new_song)
         self.assertEqual(1, self.room.song_count())
+
+    
 
     

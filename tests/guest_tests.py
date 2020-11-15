@@ -26,4 +26,5 @@ class TestGuest(unittest.TestCase):
         self.guest.remove_from_group(guest_to_remove)
         self.assertEqual(1, self.guest.group_size())
         
+    
 

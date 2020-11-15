@@ -14,3 +14,10 @@ class TestRoom(unittest.TestCase):
 
     def test_room_has_songs__empty_list(self):
         self.assertEqual(0, self.room.song_count())
+
+    def test_room_check_in(self):
+        guest = ("Nat King Cole", 41)
+        self.room.check_in(guest)
+        self.assertEqual(1, self.room.guest_count())
+
+  

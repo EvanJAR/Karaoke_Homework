@@ -27,3 +27,8 @@ class TestRoom(unittest.TestCase):
         self.room.check_in(guest)
         self.room.check_out(guest)
         self.assertEqual(0, self.room.guest_count())
+
+    def test_room_can_add_songs_to_list(self):
+        new_song = Song("Hit Me Baby One More Time", "Britney Spears")
+        self.room.add_song(new_song)
+        self.assertEqual(1, self.room.song_count())

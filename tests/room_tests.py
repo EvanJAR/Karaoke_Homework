@@ -1,5 +1,7 @@
 import unittest 
+from src_code.guest import Guest
 from src_code.room import Room
+from src_code.song import Song
 
 class TestRoom(unittest.TestCase):
 
@@ -16,8 +18,12 @@ class TestRoom(unittest.TestCase):
         self.assertEqual(0, self.room.song_count())
 
     def test_room_check_in(self):
-        guest = ("Nat King Cole", 41)
+        guest = Guest("Nat King Cole", 41)
         self.room.check_in(guest)
         self.assertEqual(1, self.room.guest_count())
 
-  
+    def test_room_check_out(self):
+        guest = Guest("Nat King Cole", 41)
+        self.room.check_in(guest)
+        self.room.check_out(guest)
+        self.assertEqual(0, self.room.guest_count())

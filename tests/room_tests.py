@@ -11,3 +11,6 @@ class TestRoom(unittest.TestCase):
     
     def test_room_has_guests__empty_room(self):
         self.assertEqual(0, self.room.guest_count())
+
+    def test_room_has_songs__empty_list(self):
+        self.assertEqual(0, self.room.song_count())

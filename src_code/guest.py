@@ -9,4 +9,6 @@ class Guest:
 
     def add_to_group(self, new_guest):
         self.group.append(new_guest)
-      
+    
+    def remove_from_group(self, guest_to_remove):
+        self.group.remove(guest_to_remove)
